@@ -1,0 +1,27 @@
+apt install unattended-upgrades
+dpkg-reconfigure --priority=low unattended-upgrades
+
+adduser <USERNAME>
+usermod -aG sudo <USERNAME>
+
+mkdir ~/.ssh && chmod 700 ~/.ssh
+
+WINDOWS:
+ssh-keygen -b 4096
+scp $env:USERPROFILE/.ssh/id_rsa.pub <USER>@<IP-ADDRESS>:~/.ssh/authorized_keys
+
+LINUX:
+sudo nano /etc/ssh/sshd_config
+	Port ###
+	AddressFamily inet
+	PermitRootLogin no
+	PasswordAuthentication no
+sudo systemctl restart sshd
+
+sudo apt install ufw
+sudo ufw allow <DEFINED IN /etc/ssh/sshd_config>
+sudo ufw enable
+sudo nano /etc/ufw/before.rules
+	# ok icmp codes for INPUT
+	-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+sudo ufw reload
