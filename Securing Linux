@@ -25,3 +25,14 @@ sudo nano /etc/ufw/before.rules
 	# ok icmp codes for INPUT
 	-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
 sudo ufw reload
+
+[PASWWORD HASHING]
+
+openssl passwd <algorithm> <yourpassword>
+
+<algorithm>
+MD5 = -1
+SHA256 = -5
+SHA512 = -6
+APR1 = -apr1
+AIX MD5 = -aixmd5
