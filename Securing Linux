@@ -1,10 +1,10 @@
-apt install unattended-upgrades
-dpkg-reconfigure --priority=low unattended-upgrades
+sudo apt install unattended-upgrades
+sudo dpkg-reconfigure --priority=low unattended-upgrades
 
-adduser <USERNAME>
-usermod -aG sudo <USERNAME>
+sudo adduser <USERNAME>
+sudo usermod -aG sudo <USERNAME>
 
-mkdir ~/.ssh && chmod 700 ~/.ssh
+sudo mkdir ~/.ssh && sudo chmod 700 ~/.ssh
 
 WINDOWS:
 ssh-keygen -b 4096
