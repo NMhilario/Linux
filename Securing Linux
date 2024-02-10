@@ -4,7 +4,7 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 sudo adduser <USERNAME>
 sudo usermod -aG sudo <USERNAME>
 
-sudo mkdir ~/.ssh && sudo chmod 700 ~/.ssh
+mkdir ~/.ssh && sudo chmod 700 ~/.ssh
 
 WINDOWS:
 ssh-keygen -b 4096
