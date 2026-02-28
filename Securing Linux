@@ -18,6 +18,16 @@ sudo nano /etc/ssh/sshd_config
 	PasswordAuthentication no
 sudo systemctl restart sshd
 
+sudo systemctl stop ssh.service
+sudo systemctl disable ssh.service
+sudo systemctl enable ssh.socket
+
+sudo systemctl daemon-reload
+
+Retart ssh.socket service:
+
+sudo systemctl restart ssh.socket
+
 sudo apt install ufw
 sudo ufw allow <DEFINED IN /etc/ssh/sshd_config>
 sudo ufw enable
