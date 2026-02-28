@@ -24,8 +24,6 @@ sudo systemctl enable ssh.socket
 
 sudo systemctl daemon-reload
 
-Retart ssh.socket service:
-
 sudo systemctl restart ssh.socket
 
 sudo apt install ufw
